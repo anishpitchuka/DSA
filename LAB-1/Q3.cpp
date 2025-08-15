@@ -31,6 +31,7 @@ int main(){
     for(int i=0;i<m;i++){
         min_arr[i] = a[i][i];
     }
+    
     cout<<"Accessing elements using base address"<<endl;
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
