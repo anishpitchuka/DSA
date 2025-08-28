@@ -47,6 +47,23 @@ int main(){
         cout<<walker->data<<" ";
         walker = walker->next;
     }
+    int target = 6;
+    struct node *prev, *curr;
+    prev = (struct node *)malloc(sizeof(struct node));
+    curr =  (struct node *)malloc(sizeof(struct node));
+    prev = NULL;
+    curr = head;
+    while(curr != NULL && curr->data != target){
+        prev = curr;
+        curr = curr->next;
+    }
+    cout<<endl;
+    if(curr != NULL){
+        cout<<"1"<<endl;
+    }else{
+        cout<<"0"<<endl;
+    }
+
 }
 
 /* struct node *ptr;
