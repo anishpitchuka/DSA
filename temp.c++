@@ -747,3 +747,146 @@
 // }
 
 //==============================================================//
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// #define SIZE 100
+
+// typedef struct {
+//     int arr[SIZE];
+//     int front, rear, count;
+// } CircularQueue;
+
+// // Initialize queue
+// void initQueue(CircularQueue *q) {
+//     q->front = 0;
+//     q->rear = -1;
+//     q->count = 0;
+// }
+
+// // Check if empty (underflow)
+// int isEmpty(CircularQueue *q) {
+//     return q->count == 0;
+// }
+
+// // Check if full
+// int isFull(CircularQueue *q) {
+//     return q->count == SIZE;
+// }
+
+// // Enqueue
+// void enqueue(CircularQueue *q, int value) {
+//     if (isFull(q)) {
+//         printf("Queue Overflow! Cannot insert %d\n", value);
+//         return;
+//     }
+//     q->rear = (q->rear + 1) % SIZE;
+//     q->arr[q->rear] = value;
+//     q->count++;
+//     printf("%d enqueued.\n", value);
+// }
+
+// // Dequeue
+// int dequeue(CircularQueue *q) {
+//     if (isEmpty(q)) {
+//         printf("Queue Underflow!\n");
+//         return -1;
+//     }
+//     int value = q->arr[q->front];
+//     q->front = (q->front + 1) % SIZE;
+//     q->count--;
+//     printf("%d dequeued.\n", value);
+//     return value;
+// }
+
+// // Display
+// void display(CircularQueue *q) {
+//     if (isEmpty(q)) {
+//         printf("Queue is empty.\n");
+//         return;
+//     }
+//     printf("Queue: ");
+//     int i, index;
+//     for (i = 0; i < q->count; i++) {
+//         index = (q->front + i) % SIZE;
+//         printf("%d ", q->arr[index]);
+//     }
+//     printf("\n");
+// }
+
+// // Reverse first k elements using stack
+// void reverseK(CircularQueue *q, int k) {
+//     if (k > q->count || k <= 0) {
+//         printf("Invalid k value.\n");
+//         return;
+//     }
+
+//     int stack[SIZE], top = -1;
+//     int i, index;
+
+//     // Push first k elements to stack
+//     for (i = 0; i < k; i++) {
+//         index = (q->front + i) % SIZE;
+//         stack[++top] = q->arr[index];
+//     }
+
+//     // Pop from stack and put back in queue
+//     for (i = 0; i < k; i++) {
+//         index = (q->front + i) % SIZE;
+//         q->arr[index] = stack[top--];
+//     }
+
+//     printf("First %d elements reversed.\n", k);
+// }
+
+// int main() {
+//     CircularQueue q;
+//     initQueue(&q);
+
+//     int choice, value, k;
+
+//     while (1) {
+//         printf("\n--- Circular Queue Menu ---\n");
+//         printf("1. Enqueue\n");
+//         printf("2. Dequeue\n");
+//         printf("3. Display\n");
+//         printf("4. Reverse first k elements\n");
+//         printf("5. Check Underflow\n");
+//         printf("6. Exit\n");
+//         printf("Enter choice: ");
+//         scanf("%d", &choice);
+
+//         if (choice == 1) {
+//             printf("Enter value: ");
+//             scanf("%d", &value);
+//             enqueue(&q, value);
+//         }
+//         else if (choice == 2) {
+//             dequeue(&q);
+//         }
+//         else if (choice == 3) {
+//             display(&q);
+//         }
+//         else if (choice == 4) {
+//             printf("Enter k: ");
+//             scanf("%d", &k);
+//             reverseK(&q, k);
+//         }
+//         else if (choice == 5) {
+//             if (isEmpty(&q))
+//                 printf("Queue Underflow (Empty).\n");
+//             else
+//                 printf("Queue is not empty.\n");
+//         }
+//         else if (choice == 6) {
+//             exit(0);
+//         }
+//         else {
+//             printf("Invalid choice.\n");
+//         }
+//     }
+//     return 0;
+// }
+
+
