@@ -300,7 +300,7 @@
 //     printArray(arr, n);
 // }
 
-//==============MERGE SORT=================================//
+//==============   MERGE SORT  =================================//
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -422,4 +422,3 @@
 //     quickSort(arr, 0, n-1);
 //     printArray(arr, n);
 // }
-
